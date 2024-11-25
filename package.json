@@ -1,0 +1,13 @@
+{
+    "name": "yarn-test",
+    "packageManager": "yarn@4.5.3",
+    "scripts": {
+        "start": "yarn tsc && yarn node dist/index.js"
+    },
+    "type": "module",
+    "devDependencies": {
+        "@types/node": "^22.9.3",
+        "corepack": "^0.30.0",
+        "typescript": "^5.7.2"
+    }
+}
