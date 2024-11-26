@@ -1,33 +1,28 @@
 // TODO: import day wise problems
 import challenge01 from "./challenge-01-trebuchet/index.js";
 import challenge02 from "./challenge-02-cube-conundrum/index.js";
+import challenge03 from "./challenge-03-gear-ratios/index.js";
 
 // TODO: run and evaluate them one by one
 const evaluator: (challengeNumber: number) => void = async (
     challengeNumber
 ) => {
-    switch (challengeNumber) {
-        case 1: {
-            // Challenge 01
-            console.info(`[START]: Challenge 01`);
-            const resultChallenge01 = await challenge01();
-            console.info(
-                `\n[SOLUTION 01]: ${JSON.stringify(resultChallenge01)}\n`
-            );
-            console.info(`[END]`);
-            return;
-        }
-        case 2: {
-            // Challenge 02
-            console.info(`[START]: Challenge 02`);
-            const resultChallenge01 = await challenge02();
-            console.info(
-                `\n[SOLUTION 02]: ${JSON.stringify(resultChallenge01)}\n`
-            );
-            console.info(`[END]`);
-            return;
-        }
-    }
+    // Define all functions
+    const challengeFunctions: Function[] = [
+        challenge01,
+        challenge02,
+        challenge03,
+    ];
+    // Run the function
+    console.info(`[START]: Challenge ${challengeNumber.toPrecision(2)}`);
+    const resultChallenge = await challengeFunctions[challengeNumber]();
+    console.info(
+        `\n[SOLUTION ${challengeNumber.toPrecision(2)}]: ${JSON.stringify(
+            resultChallenge
+        )}\n`
+    );
+    console.info(`[END]`);
+    return;
 };
 
 // Get command Line args
